@@ -1,17 +1,19 @@
 ---
 import Container from "@components/container.astro";
 import Cta from "@components/cta.astro";
-import Features from "@components/features.astro";
 import Hero from "@components/hero.astro";
-import Logos from "@components/logos.astro";
 import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="">
   <Container>
     <Hero />
-    <Features />
-    <Logos />
+
+    <iframe
+      src={"https://sales-wpn-staging.eportrait.de/"}
+      class="w-full h-[700px] border-none"
+      title="Embedded content"
+      loading="lazy"></iframe>
     <Cta />
   </Container>
 </Layout>
