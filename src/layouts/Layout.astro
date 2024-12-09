@@ -3,9 +3,7 @@ import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
-import '@fontsource-variable/bricolage-grotesque';
-
-
+import "@fontsource-variable/bricolage-grotesque";
 
 export interface Props {
   title: string;
@@ -25,11 +23,14 @@ const makeTitle = title
   : "Astroship - Starter Template for Astro with Tailwind CSS";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
@@ -55,6 +56,17 @@ const makeTitle = title
         },
       }}
     />
+    <script>
+      window.addEventListener("message", ({ data }) => {
+        if (data.from === "EPORTRAIT_UI") {
+          if (data.height) {
+            const iframe = document.getElementById("#theIFrame");
+            if (!iframe) return;
+            iframe.height = data.height;
+          }
+        }
+      });
+    </script>
   </head>
   <body>
     <Navbar />
