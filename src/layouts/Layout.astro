@@ -60,7 +60,7 @@ const makeTitle = title
       window.addEventListener("message", ({ data }) => {
         if (data.from === "EPORTRAIT_UI") {
           if (data.height) {
-            const iframe = document.getElementById("#theIFrame");
+            const iframe = document.getElementById("theIFrame");
             if (!iframe) return;
             iframe.height = data.height;
           }
